@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo '🔧 Building the application...'
+                sh '🔧 Building the application...'
                 bat 'echo Simulating build step...'
             }
         }
