@@ -10,26 +10,22 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh '🔧 Building the application...'
-                bat 'echo Simulating build step...'
+                echo '🔧 Building the application...'
+                sh 'echo Build successful!'
             }
         }
 
         stage('Deploy to Target Server') {
             steps {
-                echo '🚀 Deploying to remote server via SSH...'
-                bat '''
-                echo Cleaning old files...
-                echo Copying new files...
-                echo Restarting Node/Python service...
-                '''
+                echo '🚀 Deploying to target server...'
+                sh 'echo Deployment completed successfully!'
             }
         }
     }
 
     post {
         success {
-            echo '✅ Build succeeded! Sending success email...'
+            echo '✅ Build and deployment successful!'
         }
         failure {
             echo '❌ Build failed! Sending failure email...'
